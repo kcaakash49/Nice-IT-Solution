@@ -7,6 +7,8 @@ import {
   Database,
   Network,
 } from "lucide-react";
+import { useSafeInViewHook } from "../hooks/useSafeInViewHook";
+
 
 type Service = {
   title: string;
@@ -78,15 +80,19 @@ const cardVariants: Variants = {
 };
 
 export default function ServicesSection() {
+  const { ref: headerRef, inView: headerInView } = useSafeInViewHook({ threshold: 0.3 });
+  const { ref: gridRef, inView: gridInView } = useSafeInViewHook({ threshold: 0.2 });
+  
+
   return (
     <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
         {/* Header */}
         <motion.div
+          ref={headerRef as any}
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-indigo-600 mb-2">
@@ -101,11 +107,11 @@ export default function ServicesSection() {
 
         {/* Cards grid */}
         <motion.div
+          ref={gridRef as any}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={wrapperVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          animate={gridInView ? "visible" : "hidden"}
         >
           {services.map((svc) => (
             <motion.div

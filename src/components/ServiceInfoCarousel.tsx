@@ -1,6 +1,3 @@
-
-
-
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
@@ -16,37 +13,37 @@ type Slide = {
 };
 
 const slides: Slide[] = [
-    {
-      key: "ftth",
-      title: "FTTH Trading",
-      subtitle: "Premium fiber goods for blazing connectivity.",
-      description: [
-        "Optical fibers, splitters, and terminal boxes.",
-        "Accessories: connectors, patch cords, and tools.",
-        "Bulk pricing for resellers and installers.",
-        "Fast shipping within Nepal.",
-      ],
-      primaryCta: { label: "Shop Now" },
-      secondaryCta: { label: "Request Quote" },
-      imageSrc: "/src/assets/serviceImage/networking.webp",
-      ariaLabel: "FTTH Trading services overview",
-    },
-    {
-      key: "it",
-      title: "IT Services",
-      subtitle: "Managed infrastructure, support, and consulting.",
-      description: [
-        "On-site and remote support.",
-        "Network setup & monitoring.",
-        "Security audits and backup solutions.",
-        "Custom solutions for small/medium businesses.",
-      ],
-      primaryCta: { label: "Learn More" },
-      secondaryCta: { label: "Get a Consultation" },
-      imageSrc: "/src/assets/serviceImage/itService.webp",
-      ariaLabel: "IT Services overview",
-    },
-  ];
+  {
+    key: "ftth",
+    title: "FTTH Trading",
+    subtitle: "Premium fiber goods for blazing connectivity.",
+    description: [
+      "Optical fibers, splitters, and terminal boxes.",
+      "Accessories: connectors, patch cords, and tools.",
+      "Bulk pricing for resellers and installers.",
+      "Fast shipping within Nepal.",
+    ],
+    primaryCta: { label: "Shop Now" },
+    secondaryCta: { label: "Request Quote" },
+    imageSrc: "/src/assets/serviceImage/networking.webp",
+    ariaLabel: "FTTH Trading services overview",
+  },
+  {
+    key: "it",
+    title: "IT Services",
+    subtitle: "Managed infrastructure, support, and consulting.",
+    description: [
+      "On-site and remote support.",
+      "Network setup & monitoring.",
+      "Security audits and backup solutions.",
+      "Custom solutions for small/medium businesses.",
+    ],
+    primaryCta: { label: "Learn More" },
+    secondaryCta: { label: "Get a Consultation" },
+    imageSrc: "/src/assets/serviceImage/itService.webp",
+    ariaLabel: "IT Services overview",
+  },
+];
 
 const containerVariants: Variants = {
   hidden: {},
@@ -134,14 +131,12 @@ export default function ServiceInfoCarousel() {
 
               {/* Darkening overlays */}
               <div className="absolute inset-0" aria-hidden="true">
-                {/* uniform soft black veil */}
                 <div className="absolute inset-0 bg-black/20" />
-                {/* gradient for depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/60 dark:from-black/80 dark:via-black/50 dark:to-black/70" />
               </div>
 
               {/* Content */}
-              <div className="relative z-10 max-w-6xl w-full px-6 py-16 flex flex-col lg:flex-row gap-8">
+              <div className="relative z-10 max-w-6xl w-full px-6 py-12 sm:py-16 flex flex-col lg:flex-row gap-8">
                 <div className="flex-1 flex flex-col justify-center">
                   <motion.div
                     variants={containerVariants}
@@ -149,13 +144,19 @@ export default function ServiceInfoCarousel() {
                     animate={loaded[slide.key] ? "visible" : "hidden"}
                   >
                     <motion.h2
-                      className="text-3xl sm:text-5xl font-extrabold mb-2 leading-tight text-white"
+                      className="font-extrabold mb-2 leading-tight text-white"
+                      style={{
+                        fontSize: "clamp(1.5rem, 5vw, 3rem)",
+                      }}
                       variants={itemVariants}
                     >
                       {slide.title}
                     </motion.h2>
                     <motion.p
-                      className="text-lg sm:text-xl mb-4 text-white/90"
+                      className="mb-4 text-white/90"
+                      style={{
+                        fontSize: "clamp(0.875rem, 3vw, 1.25rem)",
+                      }}
                       variants={itemVariants}
                     >
                       {slide.subtitle}
@@ -164,7 +165,10 @@ export default function ServiceInfoCarousel() {
                       className="mb-6"
                       variants={itemVariants}
                     >
-                      <ul className="list-disc pl-5 space-y-1 text-sm sm:text-base text-white">
+                      <ul
+                        className="list-disc pl-5 space-y-1 text-white"
+                        style={{ fontSize: "clamp(0.65rem, 2.2vw, 1rem)" }}
+                      >
                         {slide.description.map((d, i) => (
                           <li key={i}>{d}</li>
                         ))}
@@ -176,14 +180,25 @@ export default function ServiceInfoCarousel() {
                     >
                       <button
                         onClick={slide.primaryCta.onClick}
-                        className="px-5 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition"
+                        className="rounded-full font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition"
+                        style={{
+                          padding: "0.5rem 1rem",
+                          backgroundColor: "#6366F1",
+                          color: "white",
+                        }}
                       >
                         {slide.primaryCta.label}
                       </button>
                       {slide.secondaryCta && (
                         <button
                           onClick={slide.secondaryCta.onClick}
-                          className="px-5 py-3 border border-white/80 hover:bg-white/10 rounded-full font-medium focus:outline-none transition text-white"
+                          className="rounded-full font-medium focus:outline-none transition"
+                          style={{
+                            padding: "0.5rem 1rem",
+                            border: "1px solid rgba(255,255,255,0.8)",
+                            background: "transparent",
+                            color: "white",
+                          }}
                         >
                           {slide.secondaryCta.label}
                         </button>
@@ -198,7 +213,7 @@ export default function ServiceInfoCarousel() {
       </AnimatePresence>
 
       {/* Controls */}
-      <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-between px-3 pointer-events-none">
         <button
           onClick={handlePrev}
           aria-label="Previous slide"
@@ -216,7 +231,7 @@ export default function ServiceInfoCarousel() {
       </div>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 sm:flex gap-2 hidden">
         {slides.map((_, i) => (
           <button
             key={i}

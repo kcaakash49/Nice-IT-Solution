@@ -1,5 +1,5 @@
-
-import { motion, Variants } from "framer-motion"; // if using verbatimModuleSyntax in tsconfig, split: import { motion } from "framer-motion"; import type { Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import { useSafeInViewHook } from "../hooks/useSafeInViewHook"; // Adjust path if needed
 
 type Service = {
   title: string;
@@ -12,29 +12,25 @@ const services: Service[] = [
     title: "FTTH Trading",
     description:
       "We supply and deploy fiber-to-the-home infrastructure, ensuring ultra-fast and reliable connectivity tailored to homes and businesses.",
-    imageUrl:
-      "/src/assets/serviceImage/ftthtrading.webp",
+    imageUrl: "/src/assets/serviceImage/ftthtrading.webp",
   },
   {
     title: "Web Development",
     description:
       "Custom websites and web apps built for performance, scalability, and user experience—modern frontend, resilient backend.",
-    imageUrl:
-      "/src/assets/serviceImage/webdevelopment.webp",
+    imageUrl: "/src/assets/serviceImage/webdevelopment.webp",
   },
   {
     title: "IP Camera Setup",
     description:
       "End-to-end IP camera installation and configuration for security monitoring with smart access and remote viewing.",
-    imageUrl:
-      "/src/assets/serviceImage/ipcamera.webp",
+    imageUrl: "/src/assets/serviceImage/ipcamera.webp",
   },
   {
     title: "IT Solutions",
     description:
       "Managed IT services, infrastructure planning, support, and maintenance to keep your systems up, secure, and aligned with growth.",
-    imageUrl:
-      "/src/assets/serviceImage/itsolution.webp",
+    imageUrl: "/src/assets/serviceImage/itsolution.webp",
   },
 ];
 
@@ -59,37 +55,36 @@ const cardVariants: Variants = {
 };
 
 export default function WhoWeAreSection() {
+  // Separate refs for header and grid with suitable thresholds
+  const { ref: headerRef, inView: headerInView } = useSafeInViewHook({ threshold: 0.3 });
+  const { ref: gridRef, inView: gridInView } = useSafeInViewHook({ threshold: 0.2 });
+
   return (
     <section className="py-16 px-6 bg-gray-50 dark:bg-black">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
+
         {/* Top row: a and b */}
-        <div className="flex flex-col md:flex-row justify-between gap-8">
+        <motion.div
+          ref={headerRef}
+          className="flex flex-col md:flex-row justify-between gap-8"
+          initial={{ opacity: 0, x: -40 }}
+          animate={headerInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 1.0, ease: "easeOut" }}
+        >
           {/* a: left block */}
-          <motion.div
-            className="flex-1"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.0, ease: "easeOut" }}
-          >
+          <div className="flex-1">
             <h2 className="text-2xl font-bold text-indigo-600 mb-2">
               Who We Are
             </h2>
             <div className="text-lg lg:text-4xl font-bold text-gray-700 dark:text-gray-300">
-              <span>FTTH And IT Solution </span><span className="lg:hidden">Provider</span>
+              <span>FTTH And IT Solution </span>
+              <span className="lg:hidden">Provider</span>
               <p className="hidden lg:block">Provider</p>
-              
             </div>
-          </motion.div>
+          </div>
 
           {/* b: right block */}
-          <motion.div
-            className="flex-1"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.0, ease: "easeOut" }}
-          >
+          <div className="flex-1">
             <p className="text-lg text-gray-700 dark:text-gray-300">
               Nice IT Solution is your trusted partner for connectivity and
               digital transformation. We blend cutting-edge fiber
@@ -99,16 +94,16 @@ export default function WhoWeAreSection() {
               and homes reliable, scalable, and modern IT ecosystems that adapt
               as they grow.
             </p>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* c: animated service cards */}
         <motion.div
+          ref={gridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={wrapperVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          animate={gridInView ? "visible" : "hidden"}
         >
           {services.map((svc) => (
             <motion.div
