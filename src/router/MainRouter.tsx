@@ -12,12 +12,13 @@ import About from "../pages/About";
 
 export const MainRouter = createBrowserRouter(createRoutesFromElements(
     <Route>
-        <Route path="/" element = {<MainLayout/>}>
+        <Route path="/akc" element = {<MainLayout/>}>
             <Route index element = {<HomePage/>}/>
             <Route path = "services" element = {<Services/>}/>
             <Route path = "about" element = {<About/>}/>
             <Route path="*" element = {<PageNotFound/>}/>
         </Route>
         
+            {/* <Route path="*" element = {<PageNotFound/>}/> */}
     </Route> 
 ))

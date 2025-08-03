@@ -4,11 +4,11 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
-  { to: "/solutions", label: "Solutions" },
-  { to: "/support", label: "Support" },
-  { to: "/contact", label: "Contact" },
+  { to: "/akc", label: "Home" },
+  { to: "/akc/services", label: "Services" },
+  { to: "/akc/solutions", label: "Solutions" },
+  { to: "/akc/support", label: "Support" },
+  { to: "/akc/contact", label: "Contact" },
 ];
 
 export default function NavBar() {
@@ -21,7 +21,7 @@ export default function NavBar() {
     <header className="w-full bg-white shadow sticky top-0 z-10 dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <NavLink to="/" className="text-xl font-bold text-indigo-600">
+          <NavLink to="/akc" className="text-xl font-bold text-indigo-600">
             Nice IT Solution<span className="text-gray-500">.</span>
           </NavLink>
           <span className="hidden lg:inline text-sm text-gray-500">
@@ -44,7 +44,7 @@ export default function NavBar() {
             </NavLink>
           ))}
           <NavLink
-            to="/dashboard"
+            to="/akc/dashboard"
             className="ml-4 px-4 py-2 bg-indigo-600 text-white rounded-xl text-sm font-medium hover:bg-indigo-500 transition"
           >
             Dashboard
