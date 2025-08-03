@@ -25,7 +25,7 @@ const slides: Slide[] = [
     ],
     primaryCta: { label: "Shop Now" },
     secondaryCta: { label: "Request Quote" },
-    imageSrc: "/src/assets/serviceImage/networking.webp",
+    imageSrc: "/serviceImage/networking.webp",
     ariaLabel: "FTTH Trading services overview",
   },
   {
@@ -40,7 +40,7 @@ const slides: Slide[] = [
     ],
     primaryCta: { label: "Learn More" },
     secondaryCta: { label: "Get a Consultation" },
-    imageSrc: "/src/assets/serviceImage/itService.webp",
+    imageSrc: "/serviceImage/itService.webp",
     ariaLabel: "IT Services overview",
   },
 ];

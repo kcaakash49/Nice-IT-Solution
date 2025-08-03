@@ -13,7 +13,7 @@ export const products: Product[] = [
       description:
         "High-bandwidth fiber cables for long-distance, low-loss data transmission.",
       imageUrl:
-        "/src/assets/ftthProductImage/fibercable.webp",
+        "/ftthProductImage/fibercable.webp",
     },
     {
       id: "patch-cable",
@@ -21,7 +21,7 @@ export const products: Product[] = [
       description:
         "Flexible patch cables for internal connections and easy routing.",
       imageUrl:
-        "/src/assets/ftthProductImage/patchcable.webp",
+        "/ftthProductImage/patchcable.webp",
     },
     {
       id: "drop-wire",
@@ -29,7 +29,7 @@ export const products: Product[] = [
       description:
         "Weather-resistant drop wire for connecting end users to the main fiber line.",
       imageUrl:
-        "/src/assets/ftthProductImage/dropcable.webp",
+        "/ftthProductImage/dropcable.webp",
     },
     {
       id: "router",
@@ -37,7 +37,7 @@ export const products: Product[] = [
       description:
         "Reliable routers to distribute FTTH connectivity across your local network.",
       imageUrl:
-        "/src/assets/ftthProductImage/router.webp",
+        "/ftthProductImage/router.webp",
     },
     {
       id: "switch",
@@ -45,6 +45,6 @@ export const products: Product[] = [
       description:
         "Managed and unmanaged switches for scaling and segmenting your infrastructure.",
       imageUrl:
-        "/src/assets/ftthProductImage/switch.webp",
+        "/ftthProductImage/switch.webp",
     },
   ];
