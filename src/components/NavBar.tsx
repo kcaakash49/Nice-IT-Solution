@@ -21,7 +21,7 @@ export default function NavBar() {
     <header className="w-full bg-white shadow sticky top-0 z-10 dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <NavLink to="/akc" className="text-xl font-bold text-indigo-600">
+          <NavLink to="/" className="text-xl font-bold text-indigo-600">
             Nice IT Solution<span className="text-gray-500">.</span>
           </NavLink>
           <span className="hidden lg:inline text-sm text-gray-500">
