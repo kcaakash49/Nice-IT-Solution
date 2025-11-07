@@ -4,11 +4,11 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { to: "/akc", label: "Home" },
-  { to: "/akc/services", label: "Services" },
-  { to: "/akc/solutions", label: "Solutions" },
-  { to: "/akc/support", label: "Support" },
-  { to: "/akc/contact", label: "Contact" },
+  { to: "/", label: "Home" },
+  { to: "/services", label: "Services" },
+  { to: "/solutions", label: "Solutions" },
+  { to: "/support", label: "Support" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export default function NavBar() {
