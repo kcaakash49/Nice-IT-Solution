@@ -1,4 +1,5 @@
 
+import { BsTelephone } from "react-icons/bs";
 import {
   FaInstagram,
   FaFacebookF,
@@ -108,6 +109,14 @@ export default function Footer() {
               <div>
                 <a href="tel:+9779857073266" className="hover:underline">
                   +977 9857073266
+                </a>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <BsTelephone className="w-4 h-4 text-indigo-600" />
+              <div>
+                <a href="tel:+97771561550" className="hover:underline">
+                  +977 71561550
                 </a>
               </div>
             </div>

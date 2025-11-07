@@ -12,25 +12,25 @@ const services: Service[] = [
     title: "FTTH Trading",
     description:
       "We supply and deploy fiber-to-the-home infrastructure, ensuring ultra-fast and reliable connectivity tailored to homes and businesses.",
-    imageUrl: "/akc/serviceImage/ftthtrading.webp",
+    imageUrl: "/serviceImage/ftthtrading.webp",
   },
   {
     title: "Web Development",
     description:
       "Custom websites and web apps built for performance, scalability, and user experience—modern frontend, resilient backend.",
-    imageUrl: "/akc/serviceImage/webdevelopment.webp",
+    imageUrl: "/serviceImage/webdevelopment.webp",
   },
   {
     title: "IP Camera Setup",
     description:
       "End-to-end IP camera installation and configuration for security monitoring with smart access and remote viewing.",
-    imageUrl: "/akc/serviceImage/ipcamera.webp",
+    imageUrl: "/serviceImage/ipcamera.webp",
   },
   {
     title: "IT Solutions",
     description:
       "Managed IT services, infrastructure planning, support, and maintenance to keep your systems up, secure, and aligned with growth.",
-    imageUrl: "/akc/serviceImage/itsolution.webp",
+    imageUrl: "/serviceImage/itsolution.webp",
   },
 ];
 
