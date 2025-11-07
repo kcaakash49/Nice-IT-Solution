@@ -2,12 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+
+    <title>Nice IT Solution | Web Development, Networking & CCTV Services in Nepal</title>
+    <meta name="description" content="Nice IT Solution provides expert IT services including web development, web hosting, CCTV camera setup, IP camera installation, optical fiber and networking equipment supply in Nepal." />
+    <meta name="keywords" content="Nice IT Solution, web development Nepal, CCTV camera, IP camera, optical fiber cable, drop cable, network switches, routers, web hosting, IT support Nepal, networking equipment" />
+    <meta name="author" content="Nice IT Solution" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nice IT Solution | IT, Networking & CCTV Experts" />
+    <meta property="og:description" content="Professional IT solutions in Nepal including web hosting, CCTV camera installation, optical fiber supply, routers, and full web development services." />
+    <meta property="og:image" content="https://niceitsolution.com/images/preview.jpg" />
+    <meta property="og:url" content="https://niceitsolution.com/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nice IT Solution | Web & Networking Experts" />
+    <meta name="twitter:description" content="Leading provider of IT services, web development, hosting, and CCTV solutions in Nepal." />
+    <meta name="twitter:image" content="https://niceitsolution.com/images/preview.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/" href="/logonit.png" />
+
+    <!-- Theme & color -->
+    <meta name="theme-color" content="#0d6efd" />
   </head>
+
   <body>
     <div id="root"></div>
+
     <script type="module" src="/src/main.tsx"></script>
     <script>
       (function () {
@@ -19,9 +43,7 @@
           } else {
             document.documentElement.classList.remove("dark");
           }
-        } catch (e) {
-          // ignore (e.g., privacy mode blocking localStorage)
-        }
+        } catch (e) {}
       })();
     </script>
   </body>
