@@ -18,14 +18,14 @@ const social = [
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/yourwhatsappphonenumber", // e.g. https://wa.me/977981XXXXXXX
+    href: "https://wa.me/9779857073266", // e.g. https://wa.me/977981XXXXXXX
     icon: FaWhatsapp,
   },
   {
     name: "Facebook",
-    href: "https://facebook.com/yourbrand",
+    href: "https://www.facebook.com/profile.php?id=61583205579168", // replace with your real page URL
     icon: FaFacebookF,
-  },
+  }
 ];
 
 const quickLinks = [
