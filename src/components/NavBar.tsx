@@ -20,14 +20,16 @@ export default function NavBar() {
   return (
     <header className="w-full bg-white shadow sticky top-0 z-10 dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <NavLink to="/" className="text-xl font-bold text-indigo-600">
-            Nice IT Solution<span className="text-gray-500">.</span>
+        <div className="flex items-center">
+          <NavLink to="/" className="flex items-center">
+            <img
+              src="logo.svg"     // <-- replace with your logo file
+              alt="Nice IT Solution"
+              className="h-8 sm:h-10 md:h-12 w-auto"  // adjust size as needed
+            />
           </NavLink>
-          <span className="hidden lg:inline text-sm text-gray-500">
-            IT & Infrastructure Solutions
-          </span>
         </div>
+
 
         {/* Desktop nav */}
         <nav className="hidden md:flex gap-4 lg:gap-8 items-center">
@@ -43,13 +45,13 @@ export default function NavBar() {
               {l.label}
             </NavLink>
           ))}
-          <NavLink
+          {/* <NavLink
             to="/akc/dashboard"
             className="ml-4 px-4 py-2 bg-indigo-600 text-white rounded-xl text-sm font-medium hover:bg-indigo-500 transition"
           >
             Dashboard
-          </NavLink>
-          <ThemeToggle/>
+          </NavLink> */}
+          <ThemeToggle />
         </nav>
 
         {/* Mobile toggle */}
