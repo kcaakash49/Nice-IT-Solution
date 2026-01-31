@@ -123,8 +123,8 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <FaEnvelope className="w-4 h-4 text-indigo-600" />
               <div>
-                <a href="mailto:info@niceitsolution.com" className="hover:underline">
-                  info@niceitsolution.com
+                <a href="mailto:niceitsolutionpl@gmail.com" className="hover:underline">
+                  niceitsolutionpl@gmail.com
                 </a>
               </div>
             </div>

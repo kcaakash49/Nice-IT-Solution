@@ -57,22 +57,6 @@ export default function PageNotFound() {
           Go Home
         </Link>
       </motion.div>
-
-      <motion.div
-        className="mt-10 flex space-x-3 text-sm text-gray-500"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-      >
-        <span>Or try:</span>
-        <Link to="/listings" className="underline hover:text-indigo-600">
-          Listings
-        </Link>
-        <span>·</span>
-        <Link to="/post" className="underline hover:text-indigo-600">
-          Post a property
-        </Link>
-      </motion.div>
     </div>
   );
 }
