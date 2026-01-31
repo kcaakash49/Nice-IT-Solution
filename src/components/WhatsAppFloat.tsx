@@ -14,8 +14,8 @@ export default function WhatsAppFloat() {
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       className="
-        fixed bottom-24 right-6 z-50
-        w-14 h-14
+        fixed bottom-24 right-2 md:right-6 z-50
+        w-14 h-14 md:h-18 md:w-18
         flex items-center justify-center
         rounded-full
         bg-green-500 hover:bg-green-600
@@ -27,8 +27,8 @@ export default function WhatsAppFloat() {
 
     <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="26"
-  height="26"
+  width="30"
+  height="30"
   fill="white"
   viewBox="0 0 16 16"
   className="relative z-10"

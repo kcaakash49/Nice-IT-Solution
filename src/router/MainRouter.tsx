@@ -6,6 +6,7 @@ import PageNotFound from "../pages/PageNotFound";
 import HomePage from "../pages/HomePage";
 import Services from "../pages/Services";
 import About from "../pages/About";
+import ContactPage from "../components/Contact";
 
 // const MainLayout = React.lazy(() => import('../layout/MainLayout'));
 
@@ -16,6 +17,7 @@ export const MainRouter = createBrowserRouter(createRoutesFromElements(
             <Route index element = {<HomePage/>}/>
             <Route path = "services" element = {<Services/>}/>
             <Route path = "about" element = {<About/>}/>
+            <Route path = "contact" element = {<ContactPage/>}/>
             <Route path="*" element = {<PageNotFound/>}/>
         </Route>
         
