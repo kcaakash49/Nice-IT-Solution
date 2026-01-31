@@ -136,7 +136,7 @@ export default function ServiceInfoCarousel() {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 max-w-6xl w-full px-6 py-12 sm:py-16 flex flex-col lg:flex-row gap-8">
+              <div className="relative max-w-6xl w-full px-6 py-12 sm:py-16 flex flex-col lg:flex-row gap-8">
                 <div className="flex-1 flex flex-col justify-center">
                   <motion.div
                     variants={containerVariants}
