@@ -60,7 +60,7 @@ export default function WhoWeAreSection() {
   const { ref: gridRef, inView: gridInView } = useSafeInViewHook({ threshold: 0.2 });
 
   return (
-    <section className="py-16 px-6 bg-gray-50 dark:bg-black">
+    <section className="py-16 px-6 bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
 
         {/* Top row: a and b */}
