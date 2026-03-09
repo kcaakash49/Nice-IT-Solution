@@ -132,7 +132,7 @@ export default function Footer() {
                   <FaEnvelope className="w-4 h-4 text-indigo-600" />
                   <div>
                     <a href="mailto:niceitsolutionpl@gmail.com" className="hover:underline">
-                      niceitsolutionpl@gmail.com
+                      info@niceitsolution.com
                     </a>
                   </div>
                 </div>

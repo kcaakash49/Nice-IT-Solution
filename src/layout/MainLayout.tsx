@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import WhatsAppFloat from "../components/WhatsAppFloat";
+import { Toaster } from "sonner";
 
 
 export default function MainLayout() {
@@ -12,6 +13,7 @@ export default function MainLayout() {
           <Outlet/>
         </main>
         <WhatsAppFloat/>
+        <Toaster richColors position="top-center"/>
         <Footer />
       </div>
     );

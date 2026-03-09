@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { BsTelephone } from "react-icons/bs";
 import {
@@ -9,6 +10,14 @@ import {
   FaPhoneAlt,
   FaClock,
 } from "react-icons/fa";
+import { toast } from "sonner";
+
+type ResponseType = {
+  message? : string;
+  errors?: any;
+  error?: string;
+  success?:boolean;
+}
 
 // Social links (reuse from footer)
 const social = [
@@ -64,12 +73,22 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
     // Here you would integrate with your backend or form service
     console.log("Form submitted:", form);
-    setSubmitted(true);
-    setForm({ name: "", email: "", message: "" });
+    try {
+      const { data }: {data: ResponseType} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/mail/send-inquiry`, form);
+      console.log(data?.success);
+      if(data.success){
+        setSubmitted(true);
+        setForm({ name: "", email: "", message: "" })
+        toast.success(data.message || "Success!!!")
+      }
+    }catch(err){
+      console.error(err);
+      toast.error("Couldn't send message!!!");
+    }
   };
 
   return (
