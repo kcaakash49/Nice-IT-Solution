@@ -107,7 +107,7 @@ export default function ServiceInfoCarousel() {
   const activeSlide = slides[current];
 
   return (
-    <section className="relative w-full overflow-hidden shadow-xl bg-[#0f172a]">
+    <section className="relative w-full overflow-hidden bg-[#0f172a]">
       <div className="relative min-h-[340px] sm:min-h-[420px] lg:min-h-[520px]">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div

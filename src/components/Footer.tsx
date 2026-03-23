@@ -13,7 +13,7 @@ import {
 const social = [
   {
     name: "Instagram",
-    href: "https://instagram.com/yourbrand",
+    href: "https://instagram.com/niceitsolution", // replace with your real page URL
     icon: FaInstagram,
   },
   {
